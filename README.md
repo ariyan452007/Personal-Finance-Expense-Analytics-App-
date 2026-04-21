@@ -1,81 +1,61 @@
-🏦 FinTrack: Personal Finance & Analytics
-FinTrack is a startup-grade, production-ready personal finance management application built with React 19 and Vite. It features a modern dark-mode glassmorphism UI, real-time analytics, and robust transaction management to help users gain full control over their financial health.
+🏦 FinTrack | Personal Finance & Analytics
+Honestly, keeping track of where money goes is a nightmare between UPI, subscriptions, and random cash spends. I built FinTrack because I wanted a clean, single source of truth for my finances that didn't feel like looking at a boring Excel sheet.
 
-🚀 Features
-Financial Dashboard: Real-time summaries of total balance, income, expenses, and top spending categories.
+This is a production-ready React app designed to give you instant clarity on your spending habits using visual analytics and smart filtering.
 
-Transaction Management: Full CRUD capabilities for income and expenses with support for recurring entries.
+✨ What’s inside?
+The Big Picture: A dashboard that actually makes sense. See your total balance, monthly income vs. expenses, and your biggest "money-sink" categories at a glance.
 
-Advanced Filtering & Search: Debounced search and multi-parameter filtering (by type, category, and date).
+Smooth Transactions: Adding an expense takes seconds. I've added a "recurring" toggle for things like Netflix or Rent so they stand out in your history.
 
-Budget Tracking: Monthly limit setting with visual progress indicators and threshold warnings.
+Smart Search: I implemented a debounced search bar. You can search for "Starbucks" or that random "Pizza" note you left three weeks ago, and it filters instantly without lagging the UI.
 
-Interactive Analytics: Visualize trends with 6-month history line charts, category pie charts, and income-vs-expense bar charts using Recharts.
+Budgeting That Works: Set a monthly goal and watch the progress bar. It changes color as you get closer to your limit (a gentle nudge to stop spending!).
 
-Persistence: Secure local data persistence using localStorage.
+Data That Sticks: Everything is saved to your browser's local storage. You can refresh the page or close your browser, and your data stays right where you left it.
 
-Responsive UI: Premium glassmorphism design that works seamlessly across mobile and desktop devices.
+🛠 My Tech Choices
+I picked these tools specifically to keep the app scalable and snappy:
 
-🛠️ Tech Stack
-Frontend: React 19 (Functional Components + Hooks), Vite.
+Vite + React: Because life is too short for slow build times.
 
-Routing: React Router DOM 7.
+Context API: I used this for global state (handling transactions and budgets) to avoid the "prop-drilling" mess.
 
-State Management: Context API.
+Framer Motion: I’m a fan of "micro-interactions." You’ll notice smooth transitions when you switch pages or add items.
 
-Forms & Validation: React Hook Form + Yup.
+Recharts: Used for the analytics. It's great for showing trends over time rather than just static numbers.
 
-Charts: Recharts.
+React Hook Form + Yup: This combination handles all the validation logic so you can't accidentally add an expense without a title or a price.
 
-Animations: Framer Motion.
+📁 How I structured the code
+I followed a modular structure to keep things clean:
 
-Notifications: React-Toastify.
+src/context: The "brain" of the app. Handles all data logic.
 
-Date Handling: Date-fns.
+src/hooks: Custom logic like useTransactions and useBudget.
 
-📂 Project Structure
-Plaintext
-src/
-├── components/
-│   └── layout/         # Sidebar and Navigation components
-├── context/            # Global state (FinanceContext)
-├── hooks/              # Custom logic (useTransactions, useBudget, useDebounce)
-├── pages/              # Routed pages (Dashboard, Transactions, Budget, Analytics)
-├── utils/              # Formatting helpers and constants
-└── App.jsx             # Main routing and provider setup
-🚥 Getting Started
-Prerequisites
-Node.js (v18 or higher)
+src/components: Reusable UI bits like the Sidebar and Cards.
 
-npm or yarn
+src/pages: The main views (Dashboard, Analytics, etc.).
 
-Installation
-Clone the repository:
+🚀 Just want to run it?
+Clone it:
 
 Bash
 git clone https://github.com/your-username/personal-finance-analytics.git
-Install dependencies:
+Install the goods:
 
 Bash
 npm install
-Start the development server:
+Fire it up:
 
 Bash
 npm run dev
-🧪 Development Commands
-npm run dev: Starts the Vite development server.
+🚧 What’s Next? (The "To-Do" List)
+[ ] Real-time Currency: Integrate a live API to switch between INR/USD.
 
-npm run build: Compiles the application for production.
+[ ] Dark Mode: Because every dev loves a dark UI.
 
-npm run lint: Runs ESLint to check for code quality.
+[ ] Export to CSV: For those times you actually need to show your data to an accountant.
 
-npm run preview: Locally previews the production build.
-
-💡 Future Roadmap
-Multi-Currency Support: Integration with live exchange rate APIs.
-
-CSV/PDF Export: Export transaction history for tax and reporting purposes.
-
-PWA Support: Offline capabilities and home-screen installation.
-
-Cloud Sync: Firebase or Supabase integration for cross-device data syncing.
+Made with ❤️ and a lot of coffee by Ariyan Sonawane.
